@@ -1,7 +1,6 @@
 @use '../../app/_scss/variables' as *;
 
-article.album,
-article.no-album {
+article:is(.album, .no-album) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -82,7 +81,6 @@ article.no-album {
             hsl(from #{$darkest} h s l / 50%)
         );
         color: $purple;
-        box-shadow: none;
         border: 1px solid light-dark($lightest, $darkest);
         border-radius: 0;
         font-family: inherit;
@@ -91,24 +89,36 @@ article.no-album {
 
         .rhap_main {
             width: 100%;
+            min-width: 0;
 
             .rhap_progress-section {
+                display: flex;
+                align-items: center;
+                flex-wrap: nowrap;
+                width: 100%;
+                min-width: 0;
+
                 .rhap_time {
+                    flex: 0 0 auto;
                     color: $code;
                     font-size: 0.75rem;
                     font-variant-numeric: tabular-nums;
                 }
                 .rhap_progress-container {
+                    flex: 1 1 0;
+                    width: 100%;
+                    min-width: 0;
                     height: 1rem;
                     margin-inline: 0;
+                    outline: none;
 
                     .rhap_progress-bar {
                         height: 8px;
                         border-radius: 0;
-                        background: light-dark($light, $dark);
+                        background: light-dark($lighter, $darker);
 
                         .rhap_progress-filled {
-                            background: light-dark($black, $white);
+                            background: light-dark($dark, $light);
                             border-radius: 0;
                         }
                         .rhap_progress-bar-show-download {
@@ -123,7 +133,7 @@ article.no-album {
                             background: $purple;
                             border-radius: 50%;
                             box-shadow: none;
-                            margin-top: 4px;
+                            top: -4px;
                         }
                     }
                 }
@@ -227,6 +237,7 @@ article.no-album {
             }
         }
         .rhap_container {
+            box-sizing: border-box;
             width: 100%;
             margin-bottom: 0;
             background: linear-gradient(to bottom, light-dark($lightest, $darkest), light-dark($lighter, $darker));
@@ -235,12 +246,20 @@ article.no-album {
             box-shadow: 2px 2px 20px 2px hsl(from #{black} h s l / 20%), 1px 1px 10px 1px hsl(from #{black} h s l / 10%);
 
             .rhap_main {
-                .rhap_progress-section .rhap_progress-container .rhap_progress-bar {
-                    .rhap_download-progress {
-                        margin-top: -11px;
-                    }
-                    .rhap_progress-indicator {
-                        margin-top: -4px;
+                width: 100%;
+                min-width: 0;
+
+                .rhap_progress-section {
+                    display: flex;
+                    align-items: center;
+                    flex-wrap: nowrap;
+                    width: 100%;
+                    min-width: 0;
+
+                    .rhap_progress-container {
+                        flex: 1 1 0;
+                        width: 100%;
+                        min-width: 0;
                     }
                 }
                 .rhap_controls-section {
