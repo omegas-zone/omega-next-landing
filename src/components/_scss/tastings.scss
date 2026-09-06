@@ -1,4 +1,4 @@
-@use 'variables' as *;
+@use '../../app/_scss/variables' as *;
 
 .whisky-wrapper {
     display: grid;
@@ -73,15 +73,46 @@
         background-color: transparent;
     }
 }
+.whisky-controls {
+    display: flex;
+    padding: .5rem;
+    background-color: light-dark($lighter, $darker);
+    margin-bottom: 2rem;
+
+    * {
+        font-size: 1rem;
+    }
+    span, select, button {
+        width: 200px;
+        margin: .2rem;
+    }
+    .whisky-filters {
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+        select {
+            margin-left: 10px;
+        }
+    }
+    .whisky-sorting {
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+    }
+    .whisky-result-count,
+    .reset-filters {
+        margin-block: 1rem;
+    }
+}
 
 
 @media(max-width: $mobile-breakpoint) {
     .whisky-wrapper {
         display: grid;
         grid-template-areas:
-        "title"
-        "rating"
-        "specs";
+            "title"
+            "rating"
+            "specs";
 
         h3 {
             font-size: 1.2rem;
@@ -97,5 +128,8 @@
         .whisky-map {
             display: none;
         }
+    }
+    .whisky-controls {
+        flex-direction: column;
     }
 }

@@ -1,23 +1,22 @@
 @use '../../app/_scss/variables' as *;
 
 .theme-toggle {
-    $border: 4px;
+    $size: 82px;
+    margin-right: 1px;
     position: fixed;
-    top: 8vh;
+    top: 6vh;
     right: 2vw;
+    z-index: 1000;
+    width: $size;
+    height: $size;
+    padding: 0;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 88px;
-    height: 40px;
-    gap: 4px;
+    justify-content: center;
     border: 1px solid light-dark($light, $dark);
-    border-radius: 50px;
+    border-radius: 50%;
     background: light-dark($lighter, $darker);
     cursor: pointer;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-    z-index: 100;
-    padding: 0.5rem;
     box-shadow:
         0 0 10px light-dark(hsl(from #{$light} h s l / 50%), hsl(from #{$black} h s l / 50%)),
         -2px -2px 10px light-dark(hsl(from #{$light} h s l / 10%), hsl(from #{$black} h s l / 10%)),
@@ -26,43 +25,25 @@
         -2px -2px 10px light-dark(hsl(from #{$light} h s l / 10%), hsl(from #{$black} h s l / 10%)),
         2px 2px 10px light-dark(hsl(from #{$light} h s l / 10%), hsl(from #{$black} h s l / 10%)
     );
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 
     svg {
-        position: relative;
-        z-index: 2;
-        width: 24px;
-        height: 24px;
-        margin: 0 4px;
-        transition: color 0.3s ease;
-
-        &:hover {
-            scale: 2;
-            opacity: 1;
-        }
-        path,
-        circle{
-            fill: $yellow;
-            stroke: $yellow;
-        }
-    }
-    &::before {
-        content: '';
         position: absolute;
-        z-index: 1;
-        top: 2px;
-        left: 8px;
         width: 32px;
         height: 32px;
-        border-radius: 50%;
-        background: light-dark($light, $dark);
-        border: 1px solid light-dark($dark, $light);
-        transition: transform 0.3s ease;
+        fill: $yellow;
+        stroke: $yellow;
+        transition: opacity 0.2s ease, scale 0.2s ease;
     }
-    &.dark::before {
-        transform: translateX(36px);
+    .sun,
+    .moon {
+        opacity: 0;
+        scale: 0.75;
     }
-    &:focus-visible {
-        outline: none;
+    &.light .sun,
+    &.dark .moon {
+        opacity: 1;
+        scale: 1;
     }
     &:hover {
         box-shadow:
@@ -73,14 +54,27 @@
             -2px -2px 10px light-dark(hsl(from #{$light} h s l / 10%), hsl(from #{$black} h s l / 20%)),
             2px 2px 10px light-dark(hsl(from #{$light} h s l / 10%), hsl(from #{$black} h s l / 20%)
         );
+
+        .sun,
+        .moon {
+            opacity: 0;
+            scale: 2;
+        }
+        &.light .moon,
+        &.dark .sun {
+            opacity: 1;
+            scale: 2;
+        }
+    }
+    &:focus-visible {
+        outline: none;
     }
 }
 
 
 @media(max-width: $mobile-breakpoint) {
     .theme-toggle {
-        position: fixed;
-        top: .5rem;
+        top: 0.5rem;
         right: 2rem;
     }
 }
