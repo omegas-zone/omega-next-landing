@@ -15,7 +15,7 @@ article.no-album {
     &.album {
         background-color: light-dark($lighter, $darker);
         border-radius: 1rem;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 0 10px hsl(from #{black} h s l / 50%);
     }
     h3 {
         margin-bottom: 0;
@@ -68,7 +68,7 @@ article.no-album {
         &:has(.playing) {
             border: 1px solid hsl(from #{$purple} h s l / 25%);
             background-color: light-dark($lightest, $darkest);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 10px hsl(from #{black} h s l / 50%);
         }
         &:has(.loading) {
             animation: track-loading 1.2s ease-in-out infinite;
@@ -87,6 +87,7 @@ article.no-album {
         border-radius: 0;
         font-family: inherit;
         outline: none !important;
+        box-shadow: 0 1rem 3rem hsl(from #{black} h s l / 50%);
 
         .rhap_main {
             width: 100%;
@@ -231,7 +232,7 @@ article.no-album {
             background: linear-gradient(to bottom, light-dark($lightest, $darkest), light-dark($lighter, $darker));
             padding: 0.75rem 1.5rem;
             border-radius: 1rem;
-            box-shadow: 2px 2px 20px 2px rgba(0, 0, 0, 0.2), 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
+            box-shadow: 2px 2px 20px 2px hsl(from #{black} h s l / 20%), 1px 1px 10px 1px hsl(from #{black} h s l / 10%);
 
             .rhap_main {
                 .rhap_progress-section .rhap_progress-container .rhap_progress-bar {
@@ -262,7 +263,7 @@ article.no-album {
         &.album {
             background-color: light-dark($lighter, $darker);
             border-radius: 1rem;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 10px hsl(from #{black} h s l / 50%);
         }
         &.no-album {
             border-bottom: 1px solid light-dark($darker, $lighter);

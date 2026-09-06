@@ -23,9 +23,15 @@ export default function DIY(): JSX.Element {
                 find them on my <a href="https://playground.ome.gs/">playground website</a>.
             </p>
             <div className="diy-images">
-                <Image src="/images/cabinet.jpg" alt="" width={864} height={952} className="diy-image cabinet"/>
-                <Image src="/images/caddy.jpg" alt="" width={216} height={238} className="diy-image caddy"/>
-                <Image src="/images/bar.jpg" alt="" width={216} height={238} className="diy-image bar"/>
+                <div className="diy-image-wrapper">
+                    <Image src="/images/cabinet.jpg" alt="" width={864} height={952} className="diy-image cabinet"/>
+                </div>
+                <div className="diy-image-wrapper">
+                    <Image src="/images/caddy.jpg" alt="" width={216} height={238} className="diy-image caddy"/>
+                </div>
+                <div className="diy-image-wrapper">
+                    <Image src="/images/bar.jpg" alt="" width={216} height={238} className="diy-image bar"/>
+                </div>
             </div>
         </article>
     </section>);

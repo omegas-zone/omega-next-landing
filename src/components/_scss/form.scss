@@ -72,11 +72,11 @@ dialog {
     width: calc(100% - 2rem);
     background-color: light-dark($lighter, $darker);
     color: light-dark($dark, $light);
-    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.35);
+    box-shadow: 0 1rem 3rem hsl(from #{black} h s l / 35%);
     outline: none;
 
     &::backdrop {
-        background-color: rgba(0, 0, 0, 0.6);
+        background-color: hsl(from #{black} h s l / 60%);
         backdrop-filter: blur(4px);
     }
     & > div {

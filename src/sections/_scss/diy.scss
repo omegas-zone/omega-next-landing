@@ -24,6 +24,9 @@ section#diy {
         top: 0;
         left: -750px;
 
+        .diy-image-wrapper {
+            filter: drop-shadow(0 10px 15px hsl(from #{black} h s l / 70%));
+        }
         .diy-image {
             position: absolute;
             width: 864px;
