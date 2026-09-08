@@ -35,8 +35,10 @@ export default function Toggle() {
 
             const newTheme = event.matches ? 'dark' : 'light';
 
-            setTheme(newTheme);
-            document.documentElement.style.colorScheme = newTheme;
+            document.startViewTransition(() => {
+                setTheme(newTheme);
+                document.documentElement.style.colorScheme = newTheme;
+            });
         };
 
         mediaQuery.addEventListener('change', handleChange);
@@ -54,9 +56,11 @@ export default function Toggle() {
         const nextTheme: Theme = theme === 'dark' ? 'light' : 'dark';
 
         localStorage.setItem('theme', nextTheme);
-        document.documentElement.style.colorScheme = nextTheme;
 
-        setTheme(nextTheme);
+        document.startViewTransition(() => {
+            setTheme(nextTheme);
+            document.documentElement.style.colorScheme = nextTheme;
+        });
     };
 
     if (theme === null) {

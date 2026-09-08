@@ -70,6 +70,26 @@
     }
 }
 
+::view-transition-old(root) {
+    animation: none;
+}
+::view-transition-new(root) {
+    animation: circle-in 2000ms ease-in;
+    z-index: 1;
+}
+
+@keyframes circle-in {
+    $x: calc(100% - 2vw - 50px);
+    $y: calc(6vh + 43px);
+
+    from {
+        clip-path: circle(0% at $x $y);
+    }
+    to {
+        clip-path: circle(140% at $x $y);
+    }
+}
+
 
 @media(max-width: $mobile-breakpoint) {
     .theme-toggle {
