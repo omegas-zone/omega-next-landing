@@ -25,31 +25,31 @@ section#diy {
         left: -750px;
 
         .diy-image-wrapper {
-            filter: drop-shadow(0 10px 15px hsl(from #{black} h s l / 70%));
-        }
-        .diy-image {
             position: absolute;
-            width: 864px;
-            height: 952px;
-            aspect-ratio: 1;
-            object-fit: cover;
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            filter: drop-shadow(0 10px 15px hsl(from #{black} h s l / 70%));
+            width: 216px;
+            height: 238px;
 
-            &.cabinet {
+            &:has(.cabinet) {
+                width: 864px;
+                height: 952px;
                 top: -180px;
                 left: -170px;
             }
-            &.caddy {
+            &:has(.caddy) {
                 bottom: 100px;
                 right: 170px;
-                width: 216px;
-                height: 238px;
             }
-            &.bar {
+            &:has(.bar) {
                 bottom: 100px;
                 right: 420px;
-                width: 216px;
-                height: 238px;
+            }
+            .diy-image {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
             }
         }
     }
@@ -76,10 +76,11 @@ section#diy {
             gap: 1rem;
             width: unset;
             height: unset;
-        }
-        .diy-image {
-            width: 108px !important;
-            height: 119px !important;
+
+            .diy-image-wrapper {
+                width: 108px !important;
+                height: 119px !important;
+            }
         }
     }
 }
