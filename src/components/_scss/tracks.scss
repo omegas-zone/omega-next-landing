@@ -130,7 +130,7 @@ article:is(.album, .no-album) {
                         .rhap_progress-indicator {
                             width: 16px;
                             height: 16px;
-                            background: $purple;
+                            background: $clr-purple;
                             border-radius: 50%;
                             box-shadow: none;
                             top: -4px;
@@ -162,10 +162,10 @@ article:is(.album, .no-album) {
                     padding: 0;
                 }
                 .rhap_button-clear:hover {
-                    color: $purple;
+                    color: $clr-purple;
                 }
                 .rhap_button-clear:focus-visible {
-                    outline: 1px solid light-dark($black, $white);
+                    outline: 1px solid light-dark($clr-black, $clr-white);
                     outline-offset: 3px;
                 }
                 .rhap_skip-button,
@@ -178,7 +178,7 @@ article:is(.album, .no-album) {
                     outline: none !important;
 
                     &:focus-visible svg path {
-                        fill: $purple;
+                        fill: $clr-purple;
                     }
                 }
                 .rhap_play-pause-button,
@@ -197,12 +197,12 @@ article:is(.album, .no-album) {
                 }
                 .rhap_volume-bar {
                     height: 2px;
-                    background: light-dark($light, $dark);
+                    background: light-dark($clr-light, $clr-dark);
                 }
                 .rhap_volume-indicator {
                     width: 16px;
                     height: 16px;
-                    background: $purple;
+                    background: $clr-purple;
                     margin-top: -2px;
                 }
             }
@@ -221,7 +221,7 @@ article:is(.album, .no-album) {
 }
 
 
-@media(max-width: $mobile-breakpoint) {
+@media(max-width: $dim-breakpoint) {
     article:is(.album, .no-album) {
         margin-bottom: 1rem;
         padding-bottom: 0;
@@ -240,7 +240,7 @@ article:is(.album, .no-album) {
             box-sizing: border-box;
             width: 100%;
             margin-bottom: 0;
-            background: linear-gradient(to bottom, light-dark($lightest, $darkest), light-dark($lighter, $darker));
+            background: linear-gradient(to bottom, light-dark($clr-lightest, $clr-darkest), light-dark($clr-lighter, $clr-darker));
             padding: 0.75rem 1.5rem;
             border-radius: 1rem;
             box-shadow: 2px 2px 20px 2px hsl(from #{black} h s l / 20%), 1px 1px 10px 1px hsl(from #{black} h s l / 10%);
@@ -280,12 +280,12 @@ article:is(.album, .no-album) {
             }
         }
         &.album {
-            background-color: light-dark($lighter, $darker);
+            background-color: light-dark($clr-lighter, $clr-darker);
             border-radius: 1rem;
             box-shadow: 0 0 10px hsl(from #{black} h s l / 50%);
         }
         &.no-album {
-            border-bottom: 1px solid light-dark($darker, $lighter);
+            border-bottom: 1px solid light-dark($clr-darker, $clr-lighter);
             margin-inline: 0;
             padding-bottom: 2rem;
         }

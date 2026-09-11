@@ -6,12 +6,15 @@
 	right: 12vw;
 	width: 250px;
 	height: 200px;
-	filter: drop-shadow(5px 5px 3px light-dark(hsl(from #{$white} h s l / 12.5%), hsl(from #{$black} h s l / 12.5%)));
-	animation-name: dive;
-	animation-duration: 5s;
-	animation-iteration-count: infinite;
-	animation-timing-function: ease-in-out;
+	filter: drop-shadow(5px 5px 3px light-dark(hsl(from #{$clr-white} h s l / 12.5%), hsl(from #{$clr-black} h s l / 12.5%)));
 	z-index: 9999;
+
+	@media (prefers-reduced-motion: no-preference) {
+		animation-name: dive;
+		animation-duration: 5s;
+		animation-iteration-count: infinite;
+		animation-timing-function: ease-in-out;
+	}
 
 	img {
 		width: 250px;
@@ -30,95 +33,107 @@
 		filter: drop-shadow(5px 5px 3px hsl(from #{$clr-purple} h s l / 50%));
 	}
 }
-#bubbles {
-    position: fixed;
-    width: 100vw;
-    height: 24vh;
-    overflow: hidden;
-    bottom: 0;
-    left: 0;
-	z-index: 9999;
 
-	.bubble {
-		position: absolute;
+@media (prefers-reduced-motion: no-preference) {
+	#bubbles {
+		position: fixed;
+		width: 100vw;
+		height: 24vh;
+		overflow: hidden;
 		bottom: 0;
-		width: 40px;
-		height: 40px;
-		background: light-dark($lightest, $darkest);
-		border-radius: 50%;
-		opacity: 0.5;
-		will-change: auto;
-		animation: floating 10s infinite ease-in;
-		transform: translateZ(0);
+		left: 0;
+		z-index: 9999;
 
-		&:nth-child(1) {
+		.bubble {
+			position: absolute;
+			bottom: 0;
 			width: 40px;
 			height: 40px;
-			left: 10%;
-			animation-duration: 8s;
-		}
-		&:nth-child(2) {
-			width: 20px;
-			height: 20px;
-			left: 20%;
-			animation-duration: 8s;
-			animation-delay: 1s;
-		}
-		&:nth-child(3) {
-			width: 50px;
-			height: 50px;
-			left: 35%;
-			animation-duration: 10s;
-			animation-delay: 2s;
-		}
-		&:nth-child(4) {
-			width: 80px;
-			height: 80px;
-			left: 50%;
-			animation-duration: 7s;
-			animation-delay: 0s;
-		}
-		&:nth-child(5) {
-			width: 35px;
-			height: 35px;
-			left: 55%;
-			animation-duration: 6s;
-			animation-delay: 1s;
-		}
-		&:nth-child(6) {
-			width: 45px;
-			height: 45px;
-			left: 65%;
-			animation-duration: 8s;
-			animation-delay: 3s;
-		}
-		&:nth-child(7) {
-			width: 25px;
-			height: 25px;
-			left: 75%;
-			animation-duration: 7s;
-			animation-delay: 2s;
-		}
-		&:nth-child(8) {
-			width: 80px;
-			height: 80px;
-			left: 80%;
-			animation-duration: 6s;
-			animation-delay: 1s;
-		}
-		&:nth-child(9) {
-			width: 15px;
-			height: 15px;
-			left: 70%;
-			animation-duration: 9s;
-			animation-delay: 0s;
-		}
-		&:nth-child(10) {
-			width: 50px;
-			height: 50px;
-			left: 85%;
-			animation-duration: 5s;
-			animation-delay: 3s;
+			background: light-dark($clr-lightest, $clr-darkest);
+			border-radius: 50%;
+			opacity: 0.5;
+			will-change: auto;
+			animation: floating 10s infinite ease-in;
+			transform: translateZ(0);
+
+			&:nth-child(1) {
+				width: 40px;
+				height: 40px;
+				left: 10%;
+				animation-duration: 8s;
+			}
+
+			&:nth-child(2) {
+				width: 20px;
+				height: 20px;
+				left: 20%;
+				animation-duration: 8s;
+				animation-delay: 1s;
+			}
+
+			&:nth-child(3) {
+				width: 50px;
+				height: 50px;
+				left: 35%;
+				animation-duration: 10s;
+				animation-delay: 2s;
+			}
+
+			&:nth-child(4) {
+				width: 80px;
+				height: 80px;
+				left: 50%;
+				animation-duration: 7s;
+				animation-delay: 0s;
+			}
+
+			&:nth-child(5) {
+				width: 35px;
+				height: 35px;
+				left: 55%;
+				animation-duration: 6s;
+				animation-delay: 1s;
+			}
+
+			&:nth-child(6) {
+				width: 45px;
+				height: 45px;
+				left: 65%;
+				animation-duration: 8s;
+				animation-delay: 3s;
+			}
+
+			&:nth-child(7) {
+				width: 25px;
+				height: 25px;
+				left: 75%;
+				animation-duration: 7s;
+				animation-delay: 2s;
+			}
+
+			&:nth-child(8) {
+				width: 80px;
+				height: 80px;
+				left: 80%;
+				animation-duration: 6s;
+				animation-delay: 1s;
+			}
+
+			&:nth-child(9) {
+				width: 15px;
+				height: 15px;
+				left: 70%;
+				animation-duration: 9s;
+				animation-delay: 0s;
+			}
+
+			&:nth-child(10) {
+				width: 50px;
+				height: 50px;
+				left: 85%;
+				animation-duration: 5s;
+				animation-delay: 3s;
+			}
 		}
 	}
 }

@@ -48,19 +48,22 @@ footer {
                     opacity: 0;
                     pointer-events: none;
                 }
-                &:hover::after {
-                    animation-name: anim-3, anim-1;
-                    animation-duration: 5s, 2s;
-                    animation-iteration-count: 1, infinite;
-                    animation-timing-function: ease, linear;
-                    animation-fill-mode: forwards;
-                }
-                &:hover::before {
-                    animation-name: anim-3, anim-2;
-                    animation-duration: 5s, 2s;
-                    animation-iteration-count: 1, infinite;
-                    animation-timing-function: ease, linear;
-                    animation-fill-mode: forwards;
+
+                @media (prefers-reduced-motion: no-preference) {
+                    &:hover::after {
+                        animation-name: anim-3, anim-1;
+                        animation-duration: 5s, 2s;
+                        animation-iteration-count: 1, infinite;
+                        animation-timing-function: ease, linear;
+                        animation-fill-mode: forwards;
+                    }
+                    &:hover::before {
+                        animation-name: anim-3, anim-2;
+                        animation-duration: 5s, 2s;
+                        animation-iteration-count: 1, infinite;
+                        animation-timing-function: ease, linear;
+                        animation-fill-mode: forwards;
+                    }
                 }
             }
         }

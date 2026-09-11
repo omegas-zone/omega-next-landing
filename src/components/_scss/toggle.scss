@@ -75,12 +75,14 @@ $dim-toggle-border: 1px;
     }
 }
 
-::view-transition-old(root) {
-    animation: none;
-}
-::view-transition-new(root) {
-    animation: circle-in 2000ms ease-in;
-    z-index: 1;
+@media (prefers-reduced-motion: no-preference) {
+    ::view-transition-old(root) {
+        animation: none;
+    }
+    ::view-transition-new(root) {
+        animation: circle-in 1s ease-in;
+        z-index: 1;
+    }
 }
 
 @keyframes circle-in {
