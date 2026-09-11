@@ -8,8 +8,6 @@ import type { Social } from '@/types/all';
 
 import './_scss/footer.scss';
 
-import packageJson from '../../package.json';
-
 async function getSocials(): Promise<Social[] | null> {
     const response = await fetch(API_URL + '/social', {
         next: { revalidate: 300 },
@@ -43,10 +41,6 @@ export default async function Footer(): Promise<JSX.Element> {
                     );
                 })}
             </div>
-
-            <p className="copy">
-                v{packageJson.version}
-            </p>
         </footer>
 	</>);
 }

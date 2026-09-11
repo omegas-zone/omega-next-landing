@@ -44,7 +44,7 @@ export default async function Travels(): Promise<JSX.Element> {
             </p>
             {travels.map((travel: Blog, index: number) => (
                 <Link key={index} href={'/travels/' + travel.slug} className="banner">
-                    <h2>{travel.title}</h2>
+                    {travel.title}
                 </Link>)
             )}
         </div>
