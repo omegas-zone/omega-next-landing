@@ -3,11 +3,11 @@
 section#resume {
     background: linear-gradient(
         120deg,
-        light-dark($white, $black) 0%,
-        light-dark($lightest, $darkest) 40%,
-        light-dark($lighter, $darker) 50%,
-        light-dark($lightest, $darkest) 60%,
-        light-dark($white, $black) 100%
+        light-dark($clr-white, $clr-black) 0%,
+        light-dark($clr-lightest, $clr-darkest) 40%,
+        light-dark($clr-lighter, $clr-darker) 50%,
+        light-dark($clr-lightest, $clr-darkest) 60%,
+        light-dark($clr-white, $clr-black) 100%
     );
     position: relative;
     display: flex;
@@ -43,10 +43,10 @@ section#resume {
         background: linear-gradient(
             to bottom,
             light-dark(
-                hsl(from #{$white} h s l / 0%),
-                hsl(from #{$black} h s l / 0%)
+                hsl(from #{$clr-white} h s l / 0%),
+                hsl(from #{$clr-black} h s l / 0%)
             ) 0%,
-            light-dark($white, $black) 100%,
+            light-dark($clr-white, $clr-black) 100%,
         );
         pointer-events: none;
 
@@ -62,7 +62,7 @@ section#resume {
 }
 
 
-@media(max-width: $mobile-breakpoint) {
+@media(max-width: $dim-breakpoint) {
     @import '../../app/_scss/mobile';
 
     section#resume {
@@ -74,7 +74,7 @@ section#resume {
         }
         article {
             padding-bottom: 2rem;
-            border-bottom: 1px solid light-dark($darker, $lighter);
+            border-bottom: 1px solid light-dark($clr-darker, $clr-lighter);
             height: unset;
             flex-direction: column;
 

@@ -33,7 +33,7 @@ section#music {
 }
 
 
-@media(max-width: $mobile-breakpoint) {
+@media(max-width: $dim-breakpoint) {
     @import '../../app/_scss/mobile';
 
     section#music {

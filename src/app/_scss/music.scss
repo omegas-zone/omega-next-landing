@@ -7,11 +7,11 @@
     justify-content: center;
     background: linear-gradient(
         120deg,
-        light-dark($lighter, $darker) 0%,
-        light-dark($lightest, $darkest) 40%,
-        light-dark($white, $black) 50%,
-        light-dark($lightest, $darkest) 60%,
-        light-dark($lighter, $darker) 100%
+        light-dark($clr-lighter, $clr-darker) 0%,
+        light-dark($clr-lightest, $clr-darkest) 40%,
+        light-dark($clr-white, $clr-black) 50%,
+        light-dark($clr-lightest, $clr-darkest) 60%,
+        light-dark($clr-lighter, $clr-darker) 100%
     ) fixed;
     background-size: cover;
     width: 100vw;

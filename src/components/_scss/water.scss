@@ -27,7 +27,7 @@
     z-index: 999;
 
 	path {
-		filter: drop-shadow(5px 5px 3px hsl(from #{$purple} h s l / 50%));
+		filter: drop-shadow(5px 5px 3px hsl(from #{$clr-purple} h s l / 50%));
 	}
 }
 #bubbles {
@@ -149,7 +149,7 @@
 }
 
 
-@media(max-width: $mobile-breakpoint) {
+@media(max-width: $dim-breakpoint) {
 	.me,
 	.diving {
 		display: none;

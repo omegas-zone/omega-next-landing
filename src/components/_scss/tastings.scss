@@ -9,8 +9,8 @@
     grid-template-columns: 1fr max-content;
     padding: 0;
     margin: 10px 10px 60px;
-    background-color: light-dark($lightest, $darkest);
-    border: 1px solid $purple;
+    background-color: light-dark($clr-lightest, $clr-darkest);
+    border: 1px solid $clr-purple;
 
     &:first-of-type {
         margin-top: 64px;
@@ -22,9 +22,9 @@
         h2 {
             padding: 0 4px;
             margin-top: -40px;
-            background-color: light-dark($lightest, $darkest);
+            background-color: light-dark($clr-lightest, $clr-darkest);
             width: fit-content;
-            color: $purple;
+            color: $clr-purple;
         }
     }
     .rating-wrapper {
@@ -44,7 +44,7 @@
         .spec-label {
             font-size: 1.2rem;
             text-align: right;
-            color: $code;
+            color: $clr-gray;
         }
         .spec-value {
             font-size: 1.2rem;
@@ -76,7 +76,7 @@
 .whisky-controls {
     display: flex;
     padding: .5rem;
-    background-color: light-dark($lighter, $darker);
+    background-color: light-dark($clr-lighter, $clr-darker);
     margin-bottom: 2rem;
 
     * {
@@ -106,7 +106,7 @@
 }
 
 
-@media(max-width: $mobile-breakpoint) {
+@media(max-width: $dim-breakpoint) {
     .whisky-wrapper {
         display: grid;
         grid-template-areas:

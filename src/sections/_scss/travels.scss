@@ -27,11 +27,11 @@ section#travels {
             text-decoration: none;
             text-align: center;
             flex-direction: column;
-            box-shadow: 0 0 16px 4px light-dark(hsl(from #{$white} h s l / 10%), hsl(from #{$black} h s l / 10%));
+            box-shadow: 0 0 16px 4px light-dark(hsl(from #{$clr-white} h s l / 10%), hsl(from #{$clr-black} h s l / 10%));
             transition: all 1s;
             width: 400px;
             height: 50px;
-            background-color: light-dark(hsl(from #{$lighter} h s l / 75%), hsl(from #{$darker} h s l / 75%));
+            background-color: light-dark(hsl(from #{$clr-lighter} h s l / 75%), hsl(from #{$clr-darker} h s l / 75%));
             opacity: 0.8;
             pointer-events: all;
 
@@ -39,11 +39,11 @@ section#travels {
                 font-size: 1.5rem;
                 margin-block: 0;
                 transition: all 0.5s;
-                color: light-dark($black, $white);
-                text-shadow: 0 0 10px light-dark(hsl(from #{$white} h s l / 80%), hsl(from #{$black} h s l / 80%));
+                color: light-dark($clr-black, $clr-white);
+                text-shadow: 0 0 10px light-dark(hsl(from #{$clr-white} h s l / 80%), hsl(from #{$clr-black} h s l / 80%));
             }
             &:hover {
-                background-color: light-dark(hsl(from #{$light} h s l / 92%), hsl(from #{$dark} h s l / 92%));
+                background-color: light-dark(hsl(from #{$clr-light} h s l / 92%), hsl(from #{$clr-dark} h s l / 92%));
             }
         }
         h2.travels {
@@ -54,7 +54,7 @@ section#travels {
 }
 
 
-@media(max-width: $mobile-breakpoint) {
+@media(max-width: $dim-breakpoint) {
     @import '../../app/_scss/mobile';
 
     section#travels {
@@ -62,10 +62,10 @@ section#travels {
             gap: 1rem;
             width: 90%;
             padding-bottom: 2rem;
-            border-bottom: 1px solid light-dark($darker, $lighter);
+            border-bottom: 1px solid light-dark($clr-darker, $clr-lighter);
 
             .banner {
-                border: 1px solid $purple;
+                border: 1px solid $clr-purple;
             }
             p {
                 width: 100%;

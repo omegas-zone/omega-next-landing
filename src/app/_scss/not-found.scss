@@ -2,8 +2,8 @@
 
 body {
     margin: 0;
-    background-color: light-dark($lightest, $darkest);
-    font-family: 'Afacad', sans-serif;
+    background-color: light-dark($clr-lightest, $clr-darkest);
+    font-family: $ff-default;
     overflow: hidden;
 
     .error {
@@ -18,8 +18,8 @@ body {
         }
         h1 {
             font-size: 8rem;
-            color: light-dark($black, $white);
-            text-shadow: 2px 2px 2px hsl(from #{$purple} h s l / 25%);
+            color: light-dark($clr-black, $clr-white);
+            text-shadow: 2px 2px 2px hsl(from #{$clr-purple} h s l / 25%);
             padding: 0;
             margin: 2rem 0 0 0;
             line-height: 3rem;

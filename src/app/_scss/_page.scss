@@ -3,36 +3,38 @@
 :root {
     color-scheme: light dark;
 }
-
 html {
     color-scheme: light dark;
     scroll-snap-type: y proximity;
-    font-family: 'Afacad', sans-serif;
+    font-family: $ff-default;
 }
 body {
-    background-color: light-dark($lightest, $darkest);
+    background-color: light-dark($clr-lightest, $clr-darkest);
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    font-family: 'Afacad', sans-serif;
+    font-family: $ff-default;
 }
 *,
 button {
     scroll-behavior: smooth;
-    font-family: 'Afacad', sans-serif;
+    font-family: $ff-default;
     font-size: 1.2rem;
-    color: light-dark($darkest, $lightest);
+    color: light-dark($clr-darkest, $clr-lightest);
 }
 h1 {
     font-size: 5rem;
+    font-family: $ff-header;
 }
 h2 {
     font-size: 3rem;
-    color: $purple;
+    color: $clr-purple;
+    font-family: $ff-header;
 }
 h3 {
-    color: $purple;
+    color: $clr-purple;
     font-size: 1.7rem;
+    font-family: $ff-header;
 }
 section,
 header,
@@ -63,48 +65,48 @@ footer {
     }
 }
 a {
-    text-decoration: underline solid light-dark($purple, $yellow);
+    text-decoration: underline solid light-dark($clr-purple, $clr-yellow);
     text-underline-offset: 4px;
     text-decoration-thickness: 1px;
     transition: text-underline-offset 5s ease-in-out;
 
     &:hover {
-        text-decoration: underline solid light-dark($purple, $yellow);
+        text-decoration: underline solid light-dark($clr-purple, $clr-yellow);
         transition: all .3s ease-in-out;
         text-underline-offset: 8px;
     }
 }
 ::selection {
-    background-color: $purple;
-    color: $darkest;
-    text-decoration-color: $yellow;
+    background-color: $clr-purple;
+    color: $clr-darkest;
+    text-decoration-color: $clr-yellow;
     text-decoration-thickness: 3px;
-    text-decoration: underline $yellow solid 3px;
+    text-decoration: underline $clr-yellow solid 3px;
 }
 
-@media(max-width: $mobile-breakpoint) {
+@media(max-width: $dim-breakpoint) {
     html {
         scroll-snap-type: unset;
     }
     body {
-        background-color: light-dark($lightest, $darkest);
+        background-color: light-dark($clr-lightest, $clr-darkest);
         margin: 0;
         padding: 0;
     }
     *,
     button {
         font-size: 1.2rem;
-        color: light-dark($darkest, $lightest);
+        color: light-dark($clr-darkest, $clr-lightest);
     }
     h1 {
         font-size: 3rem;
     }
     h2 {
         font-size: 2rem;
-        color: $purple;
+        color: $clr-purple;
     }
     h3 {
-        color: $purple;
+        color: $clr-purple;
         font-size: 1.7rem;
     }
     .content-column {
@@ -127,5 +129,5 @@ a {
 }
 ::-webkit-scrollbar-thumb {
     border-radius: 8px;
-    background-color: $purple;
+    background-color: $clr-purple;
 }

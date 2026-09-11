@@ -1,28 +1,33 @@
 @use '../../app/_scss/variables' as *;
 
+$dim-toggle: 82px;
+$dim-toggle-top: 6vh;
+$dim-toggle-right: 2vw;
+$dim-toggle-border: 1px;
+
 .theme-toggle {
     margin-right: 1px;
     position: fixed;
-    top: 6vh;
-    right: 2vw;
+    top: $dim-toggle-top;
+    right: $dim-toggle-right;
     z-index: 1000;
-    width: 82px;
-    height: 82px;
+    width: $dim-toggle;
+    height: $dim-toggle;
     padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid light-dark($light, $dark);
+    border: $dim-toggle-border solid light-dark($clr-light, $clr-dark);
     border-radius: 50%;
-    background: light-dark($lighter, $darker);
+    background: light-dark($clr-lighter, $clr-darker);
     cursor: pointer;
     box-shadow:
-        0 0 10px light-dark(hsl(from #{$light} h s l / 50%), hsl(from #{$black} h s l / 50%)),
-        -2px -2px 10px light-dark(hsl(from #{$light} h s l / 10%), hsl(from #{$black} h s l / 10%)),
-        2px 2px 10px light-dark(hsl(from #{$light} h s l / 20%), hsl(from #{$black} h s l / 10%)),
-        inset 0 0 10px light-dark(hsl(from #{$light} h s l / 90%), hsl(from #{$black} h s l / 90%)),
-        -2px -2px 10px light-dark(hsl(from #{$light} h s l / 10%), hsl(from #{$black} h s l / 10%)),
-        2px 2px 10px light-dark(hsl(from #{$light} h s l / 10%), hsl(from #{$black} h s l / 10%)
+        0 0 10px light-dark(hsl(from #{$clr-light} h s l / 50%), hsl(from #{$clr-black} h s l / 50%)),
+        -2px -2px 10px light-dark(hsl(from #{$clr-light} h s l / 10%), hsl(from #{$clr-black} h s l / 10%)),
+        2px 2px 10px light-dark(hsl(from #{$clr-light} h s l / 20%), hsl(from #{$clr-black} h s l / 10%)),
+        inset 0 0 10px light-dark(hsl(from #{$clr-light} h s l / 90%), hsl(from #{$clr-black} h s l / 90%)),
+        -2px -2px 10px light-dark(hsl(from #{$clr-light} h s l / 10%), hsl(from #{$clr-black} h s l / 10%)),
+        2px 2px 10px light-dark(hsl(from #{$clr-light} h s l / 10%), hsl(from #{$clr-black} h s l / 10%)
     );
     transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 
@@ -30,8 +35,8 @@
         position: absolute;
         width: 32px;
         height: 32px;
-        fill: $yellow;
-        stroke: $yellow;
+        fill: $clr-yellow;
+        stroke: $clr-yellow;
         transition: opacity 0.2s ease, scale 0.2s ease;
     }
     .sun,
@@ -46,12 +51,12 @@
     }
     &:hover {
         box-shadow:
-            0 0 10px light-dark(hsl(from #{$light} h s l / 50%), hsl(from #{$black} h s l / 100%)),
-            -2px -2px 10px light-dark(hsl(from #{$light} h s l / 10%), hsl(from #{$black} h s l / 20%)),
-            2px 2px 10px light-dark(hsl(from #{$light} h s l / 20%), hsl(from #{$black} h s l / 20%)),
-            inset 0 0 10px light-dark(hsl(from #{$light} h s l / 90%), hsl(from #{$black} h s l / 100%)),
-            -2px -2px 10px light-dark(hsl(from #{$light} h s l / 10%), hsl(from #{$black} h s l / 20%)),
-            2px 2px 10px light-dark(hsl(from #{$light} h s l / 10%), hsl(from #{$black} h s l / 20%)
+            0 0 10px light-dark(hsl(from #{$clr-light} h s l / 50%), hsl(from #{$clr-black} h s l / 100%)),
+            -2px -2px 10px light-dark(hsl(from #{$clr-light} h s l / 10%), hsl(from #{$clr-black} h s l / 20%)),
+            2px 2px 10px light-dark(hsl(from #{$clr-light} h s l / 20%), hsl(from #{$clr-black} h s l / 20%)),
+            inset 0 0 10px light-dark(hsl(from #{$clr-light} h s l / 90%), hsl(from #{$clr-black} h s l / 100%)),
+            -2px -2px 10px light-dark(hsl(from #{$clr-light} h s l / 10%), hsl(from #{$clr-black} h s l / 20%)),
+            2px 2px 10px light-dark(hsl(from #{$clr-light} h s l / 10%), hsl(from #{$clr-black} h s l / 20%)
         );
 
         .sun,
@@ -79,8 +84,8 @@
 }
 
 @keyframes circle-in {
-    $x: calc(100% - 2vw - 50px);
-    $y: calc(6vh + 43px);
+    $x: calc(100% - ($dim-toggle-right + ($dim-toggle / 2) + $dim-toggle-border + $dim-scrollbar));
+    $y: calc($dim-toggle-top + ($dim-toggle / 2) + $dim-toggle-border);
 
     from {
         clip-path: circle(0% at $x $y);
@@ -91,11 +96,15 @@
 }
 
 
-@media(max-width: $mobile-breakpoint) {
+@media(max-width: $dim-breakpoint) {
+    $dim-toggle: 48px;
+    $dim-toggle-top: 0.5rem;
+    $dim-toggle-right: 1rem;
+
     .theme-toggle {
-        width: 48px;
-        height: 48px;
-        top: 0.5rem;
-        right: 1rem;
+        width: $dim-toggle;
+        height: $dim-toggle;
+        top: $dim-toggle-top;
+        right: $dim-toggle-right;
     }
 }

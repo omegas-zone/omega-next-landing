@@ -18,8 +18,8 @@
 	}
 	.stars-base {
 		.star {
-			color: light-dark($light, $dark);
-			fill: light-dark($light, $dark);
+			color: light-dark($clr-light, $clr-dark);
+			fill: light-dark($clr-light, $clr-dark);
 		}
 	}
 	.stars-fill {
@@ -31,8 +31,8 @@
 		transition: width 0.3s ease;
 
 		.star {
-			color: $yellow;
-			fill: $yellow;
+			color: $clr-yellow;
+			fill: $clr-yellow;
 		}
 	}
 }

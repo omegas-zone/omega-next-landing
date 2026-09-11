@@ -12,7 +12,7 @@ article:is(.album, .no-album) {
     border: none;
 
     &.album {
-        background-color: light-dark($lighter, $darker);
+        background-color: light-dark($clr-lighter, $clr-darker);
         border-radius: 1rem;
         box-shadow: 0 0 10px hsl(from #{black} h s l / 50%);
     }
@@ -26,7 +26,7 @@ article:is(.album, .no-album) {
         text-indent: 10px;
         font-size: 1.2rem;
         line-height: 2rem;
-        color: $purple;
+        color: $clr-purple;
         list-style: none;
         margin-left: -80px;
 
@@ -40,7 +40,7 @@ article:is(.album, .no-album) {
             background: none;
             pointer-events: all;
             text-decoration: underline;
-            text-decoration-color: hsl(from #{$yellow} h s l / 75%);
+            text-decoration-color: hsl(from #{$clr-yellow} h s l / 75%);
             text-underline-offset: 4px;
             text-decoration-style: dotted;
 
@@ -55,7 +55,7 @@ article:is(.album, .no-album) {
         .duration {
             font-size: 1.2rem;
             padding-right: 2ch;
-            color: $purple;
+            color: $clr-purple;
             justify-self: end;
         }
         &:before {
@@ -65,8 +65,8 @@ article:is(.album, .no-album) {
             content: "♬";
         }
         &:has(.playing) {
-            border: 1px solid hsl(from #{$purple} h s l / 25%);
-            background-color: light-dark($lightest, $darkest);
+            border: 1px solid hsl(from #{$clr-purple} h s l / 25%);
+            background-color: light-dark($clr-lightest, $clr-darkest);
             box-shadow: 0 0 10px hsl(from #{black} h s l / 50%);
         }
         &:has(.loading) {
@@ -77,11 +77,11 @@ article:is(.album, .no-album) {
         width: 480px;
         padding: 1rem 1.25rem;
         background: light-dark(
-            hsl(from #{$lightest} h s l / 50%),
-            hsl(from #{$darkest} h s l / 50%)
+            hsl(from #{$clr-lightest} h s l / 50%),
+            hsl(from #{$clr-darkest} h s l / 50%)
         );
-        color: $purple;
-        border: 1px solid light-dark($lightest, $darkest);
+        color: $clr-purple;
+        border: 1px solid light-dark($clr-lightest, $clr-darkest);
         border-radius: 0;
         font-family: inherit;
         outline: none !important;
@@ -100,7 +100,7 @@ article:is(.album, .no-album) {
 
                 .rhap_time {
                     flex: 0 0 auto;
-                    color: $code;
+                    color: $clr-gray;
                     font-size: 0.75rem;
                     font-variant-numeric: tabular-nums;
                 }
@@ -115,17 +115,17 @@ article:is(.album, .no-album) {
                     .rhap_progress-bar {
                         height: 8px;
                         border-radius: 0;
-                        background: light-dark($lighter, $darker);
+                        background: light-dark($clr-lighter, $clr-darker);
 
                         .rhap_progress-filled {
-                            background: light-dark($dark, $light);
+                            background: light-dark($clr-dark, $clr-light);
                             border-radius: 0;
                         }
                         .rhap_progress-bar-show-download {
-                            background: light-dark($light, $dark);
+                            background: light-dark($clr-light, $clr-dark);
                         }
                         .rhap_download-progress {
-                            background: light-dark($light, $dark);
+                            background: light-dark($clr-light, $clr-dark);
                         }
                         .rhap_progress-indicator {
                             width: 16px;

@@ -12,22 +12,56 @@
     font-style: normal;
     font-display: swap;
 }
+@font-face {
+    font-family: 'Driftwood';
+    src: url('/fonts/driftwood.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Garamond';
+    src: url('/fonts/garamond.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Knewave';
+    src: url('/fonts/knewave.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Moirai One';
+    src: url('/fonts/moirai-one.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 
-$black:       hsl(  0,   0%,   0%); // #000000
-$darkest:     hsl(  0,   0%,   7%); // #111111
-$darker:      hsl(  0,   0%,  13%); // #222222
-$dark:        hsl(  0,   0%,  25%); // #444444
-$code:        hsl(  0,   0%,  67%); // #aaaaaa
-$light:       hsl(  0,   0%,  75%); // #bbbbbb
-$lighter:     hsl(  0,   0%,  87%); // #dddddd
-$lightest:    hsl(  0,   0%,  93%); // #eeeeee
-$white:       hsl(  0,   0%, 100%); // #ffffff
+$clr-black:    hsl(  0,   0%,   0%);
+$clr-darkest:  hsl(  0,   0%,   7%);
+$clr-darker:   hsl(  0,   0%,  13%);
+$clr-dark:     hsl(  0,   0%,  25%);
+$clr-gray:     hsl(  0,   0%,  67%);
+$clr-light:    hsl(  0,   0%,  75%);
+$clr-lighter:  hsl(  0,   0%,  87%);
+$clr-lightest: hsl(  0,   0%,  93%);
+$clr-white:    hsl(  0,   0%, 100%);
+$clr-purple:   hsl(239,  77%,  67%);
+$clr-yellow:   hsl( 46, 100%,  55%);
+$clr-success:  hsl(140,  50%,  35%);
+$clr-error:    hsl(  0,  60%,  45%);
 
-$purple:      hsl(239,  77%,  67%); // #6c6eec
+$dim-breakpoint: 800px;
+$dim-scrollbar:  8px;
 
-$yellow:      hsl( 46, 100%,  55%); // #ffc917
-
-$success:     hsl(140,  50%,  35%); // #2d864a
-$error:       hsl(  0,  60%,  45%); // #b82e2e
-
-$mobile-breakpoint: 800px;
+$ff-default:        'Afacad', sans-serif;
+$ff-header:         'Knewave', 'Afacad', sans-serif;
+$ff-header-music:   'Moirai One', 'Afacad', sans-serif;
+$ff-header-travels: 'Knewave', 'Afacad', sans-serif;
+$ff-header-whisky:  'Knewave', 'Afacad', sans-serif;
+$ff-header-diy:     'Driftwood', 'Afacad', sans-serif;
+$ff-header-resume:  'Garamond', 'Afacad', serif;

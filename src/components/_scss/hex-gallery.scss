@@ -90,7 +90,7 @@ table {
             padding: 4px;
 
             &:not(:first-of-type) {
-                background-color: light-dark($light, $dark);
+                background-color: light-dark($clr-light, $clr-dark);
             }
             &.right {
                 text-align: right;
@@ -100,7 +100,7 @@ table {
 }
 
 
-@media(max-width: $mobile-breakpoint) {
+@media(max-width: $dim-breakpoint) {
     .hexagon-gallery,
     table {
         display: none;

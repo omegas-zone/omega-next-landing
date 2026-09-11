@@ -24,20 +24,20 @@
     svg {
         width: 32px;
         height: 32px;
-        fill: $purple;
+        fill: $clr-purple;
 
         &:hover {
             transform: scale(1.1);
         }
         &.click {
-            fill: light-dark($black, $white);
+            fill: light-dark($clr-black, $clr-white);
         }
     }
 }
 .toc {
     margin: 2rem 0;
     padding: 1rem;
-    border: 1px solid light-dark($lightest, $darkest);
+    border: 1px solid light-dark($clr-lightest, $clr-darkest);
     border-radius: 8px;
 
     ul {

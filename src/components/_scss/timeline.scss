@@ -16,7 +16,7 @@
         padding-bottom: 2.25em;
 
         &:not(:last-child):before {
-            background-color: light-dark($darker, $lighter);
+            background-color: light-dark($clr-darker, $clr-lighter);
             content: "";
             display: block;
             position: absolute;
@@ -39,7 +39,7 @@
                 position: relative;
                 width: 0.75em;
                 height: 0.75em;
-                color: light-dark($darker, $lighter);
+                color: light-dark($clr-darker, $clr-lighter);
             }
             span:not(.dot) {
                 width: 100%;
@@ -47,12 +47,12 @@
                 strong {
                     font-size: 1.2em;
                     line-height: 1.333;
-                    color: light-dark($darker, $lighter);
+                    color: light-dark($clr-darker, $clr-lighter);
                 }
                 time {
                     font-size: 0.833em;
                     line-height: 2.4;
-                    color: light-dark($darker, $lighter);
+                    color: light-dark($clr-darker, $clr-lighter);
                 }
             }
         }
@@ -60,7 +60,7 @@
             opacity: 1;
             visibility: visible;
             transition-delay: $trans-dur, 0s;
-            background-color: light-dark($lighter, $darker);
+            background-color: light-dark($clr-lighter, $clr-darker);
             padding: 0.5em 0.75em;
             width: 80%;
             border-radius: 0.375em;
@@ -77,7 +77,7 @@
         .tag {
             font-size: .8rem;
             letter-spacing: 1px;
-            background-color: $purple;
+            background-color: $clr-purple;
             color: white;
             padding: 4px 8px;
             border-radius: 4px;
@@ -88,7 +88,7 @@
 }
 
 
-@media(max-width: $mobile-breakpoint) {
+@media(max-width: $dim-breakpoint) {
     section#resume .timeline {
         width: 100%;
 

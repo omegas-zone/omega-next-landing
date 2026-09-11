@@ -3,11 +3,11 @@
 section#whisky {
     background: linear-gradient(
         120deg,
-        light-dark($white, $black) 0%,
-        light-dark($lightest, $darkest) 40%,
-        light-dark($lighter, $darker) 50%,
-        light-dark($lightest, $darkest) 60%,
-        light-dark($white, $black) 100%
+        light-dark($clr-white, $clr-black) 0%,
+        light-dark($clr-lightest, $clr-darkest) 40%,
+        light-dark($clr-lighter, $clr-darker) 50%,
+        light-dark($clr-lightest, $clr-darkest) 60%,
+        light-dark($clr-white, $clr-black) 100%
     );
     position: relative;
     display: block;
@@ -39,28 +39,28 @@ section#whisky {
         path,
         g {
             transition: fill 200ms ease;
-            stroke: $purple;
-            fill: light-dark($lighter, $darker);
+            stroke: $clr-purple;
+            fill: light-dark($clr-lighter, $clr-darker);
 
             &.active {
-                fill: $purple;
+                fill: $clr-purple;
             }
         }
         g.active path {
-            fill: $purple;
+            fill: $clr-purple;
         }
     }
 }
 
 
-@media(max-width: $mobile-breakpoint) {
+@media(max-width: $dim-breakpoint) {
     @import '../../app/_scss/mobile';
 
     section#whisky {
         article {
             height: unset;
             padding-bottom: 2rem;
-            border-bottom: 1px solid light-dark($darker, $lighter);
+            border-bottom: 1px solid light-dark($clr-darker, $clr-lighter);
 
             h2 {
                 margin-block: 1rem;

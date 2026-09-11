@@ -9,10 +9,10 @@ footer.component {
 	z-index: 999;
     background: linear-gradient(
 		to bottom,
-		light-dark(hsl(from #{$lightest} h s l / 0%), hsl(from #{$darkest} h s l / 0%)),
-		light-dark(hsl(from #{$lightest} h s l / 12.5%), hsl(from #{$darkest} h s l / 12.5%)),
-		light-dark(hsl(from #{$lightest} h s l / 50%), hsl(from #{$darkest} h s l / 50%)),
-		light-dark($lightest, $darkest)
+		light-dark(hsl(from #{$clr-lightest} h s l / 0%), hsl(from #{$clr-darkest} h s l / 0%)),
+		light-dark(hsl(from #{$clr-lightest} h s l / 12.5%), hsl(from #{$clr-darkest} h s l / 12.5%)),
+		light-dark(hsl(from #{$clr-lightest} h s l / 50%), hsl(from #{$clr-darkest} h s l / 50%)),
+		light-dark($clr-lightest, $clr-darkest)
 	);
 	pointer-events: none;
 
@@ -52,7 +52,7 @@ footer.component {
 				height: auto;
 				padding: 4px 4px 0 0;
 				margin: 12px 4px;
-				fill: $purple;
+				fill: $clr-purple;
 			}
 		}
 	}
@@ -69,7 +69,7 @@ footer.component {
 }
 
 
-@media(max-width: $mobile-breakpoint) {
+@media(max-width: $dim-breakpoint) {
 	footer.component {
 		display: none;
 	}

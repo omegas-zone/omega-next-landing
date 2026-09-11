@@ -3,11 +3,11 @@
 footer {
     background: linear-gradient(
         120deg,
-        light-dark($lighter, $darker) 0%,
-        light-dark($lightest, $darkest) 40%,
-        light-dark($white, $black) 50%,
-        light-dark($lightest, $darkest) 60%,
-        light-dark($lighter, $darker) 100%
+        light-dark($clr-lighter, $clr-darker) 0%,
+        light-dark($clr-lightest, $clr-darkest) 40%,
+        light-dark($clr-white, $clr-black) 50%,
+        light-dark($clr-lightest, $clr-darkest) 60%,
+        light-dark($clr-lighter, $clr-darker) 100%
     );
     display: flex;
     flex-direction: column;
@@ -37,7 +37,7 @@ footer {
                 &::before {
                     content: "";
                     position: absolute;
-                    border: 3px solid $purple;
+                    border: 3px solid $clr-purple;
                     z-index: 1020;
                     top: 50%;
                     left: 50%;
@@ -93,7 +93,7 @@ footer {
 }
 
 
-@media(max-width: $mobile-breakpoint) {
+@media(max-width: $dim-breakpoint) {
     @import '../../app/_scss/mobile';
 
     footer {
@@ -110,7 +110,7 @@ footer {
 
             fieldset {
                 width: 100%;
-                border: 2px solid $purple;
+                border: 2px solid $clr-purple;
                 background-size: 120px;
                 transform: unset;
                 margin: 0;

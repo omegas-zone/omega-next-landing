@@ -3,11 +3,11 @@
 section#diy {
     background: linear-gradient(
         120deg,
-        light-dark($lighter, $darker) 0%,
-        light-dark($lightest, $darkest) 40%,
-        light-dark($white, $black) 50%,
-        light-dark($lightest, $darkest) 60%,
-        light-dark($lighter, $darker) 100%
+        light-dark($clr-lighter, $clr-darker) 0%,
+        light-dark($clr-lightest, $clr-darkest) 40%,
+        light-dark($clr-white, $clr-black) 50%,
+        light-dark($clr-lightest, $clr-darkest) 60%,
+        light-dark($clr-lighter, $clr-darker) 100%
     );
     position: relative;
     display: flex;
@@ -62,13 +62,13 @@ section#diy {
 }
 
 
-@media(max-width: $mobile-breakpoint) {
+@media(max-width: $dim-breakpoint) {
     @import '../../app/_scss/mobile';
 
     section#diy {
         article {
             padding-bottom: 2rem;
-            border-bottom: 1px solid light-dark($darker, $lighter);
+            border-bottom: 1px solid light-dark($clr-darker, $clr-lighter);
         }
         .diy-images {
             display: flex;

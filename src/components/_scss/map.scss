@@ -1,13 +1,13 @@
 @use '../../app/_scss/variables' as *;
 
 .rsm-svg {
-    background-color: light-dark($white, $black);
+    background-color: light-dark($clr-white, $clr-black);
     width: 100vw;
     height: 100vh;
 }
 
 
-@media(max-width: $mobile-breakpoint) {
+@media(max-width: $dim-breakpoint) {
     .rsm-svg {
         display: none;
     }

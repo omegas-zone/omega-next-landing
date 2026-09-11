@@ -6,10 +6,10 @@ fieldset {
     gap: 2rem;
     width: 50vw;
     border: none;
-    background-color: light-dark($lightest, $darkest);
+    background-color: light-dark($clr-lightest, $clr-darkest);
     padding: 4rem 2rem;
     border-radius: 1rem;
-    box-shadow: 0 0 10px light-dark(hsl(from #{$light} h s l / 50%), hsl(from #{$black} h s l / 50%));
+    box-shadow: 0 0 10px light-dark(hsl(from #{$clr-light} h s l / 50%), hsl(from #{$clr-black} h s l / 50%));
     background-image: url('/images/me.png');
     background-repeat: no-repeat;
     background-position: right bottom;
@@ -22,17 +22,17 @@ fieldset {
     }
     input,
     textarea {
-        background-color: light-dark($lighter, $darker);
-        border: 1px solid light-dark($lightest, $darkest);
-        color: light-dark($darkest, $lightest);
+        background-color: light-dark($clr-lighter, $clr-darker);
+        border: 1px solid light-dark($clr-lightest, $clr-darkest);
+        color: light-dark($clr-darkest, $clr-lightest);
         padding: 0.5rem 1rem;
         border-radius: 0.5rem;
         font-size: 1.2rem;
-        box-shadow: inset 0 0 10px light-dark(hsl(from #{$light} h s l / 50%), hsl(from #{$black} h s l / 50%));
+        box-shadow: inset 0 0 10px light-dark(hsl(from #{$clr-light} h s l / 50%), hsl(from #{$clr-black} h s l / 50%));
         width: calc(100% - 400px);
 
         &:focus {
-            outline: 2px solid light-dark($lighter, $darker);
+            outline: 2px solid light-dark($clr-lighter, $clr-darker);
         }
     }
     textarea {
@@ -47,31 +47,31 @@ fieldset {
     }
 }
 :is(fieldset, dialog) button{
-    background-color: $yellow;
-    border: 1px solid light-dark($lighter, $darker);
+    background-color: $clr-yellow;
+    border: 1px solid light-dark($clr-lighter, $clr-darker);
     font-weight: bold;
-    color: $darker;
+    color: $clr-darker;
     padding: 0.5rem;
     border-radius: 0.5rem;
     font-size: 1.2rem;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
     width: 320px;
-    box-shadow: 0 0 20px hsl(from #{$yellow} h s l / 25%);
+    box-shadow: 0 0 20px hsl(from #{$clr-yellow} h s l / 25%);
     outline: none;
 
     &:hover {
-        box-shadow: 0 0 30px hsl(from #{$yellow} h s l / 50%);
+        box-shadow: 0 0 30px hsl(from #{$clr-yellow} h s l / 50%);
     }
 }
 dialog {
-    border: 1px solid $purple;
+    border: 1px solid $clr-purple;
     border-radius: 1rem;
     padding: 0;
     max-width: 40vw;
     width: calc(100% - 2rem);
-    background-color: light-dark($lighter, $darker);
-    color: light-dark($dark, $light);
+    background-color: light-dark($clr-lighter, $clr-darker);
+    color: light-dark($clr-dark, $clr-light);
     box-shadow: 0 1rem 3rem hsl(from #{black} h s l / 35%);
     outline: none;
 
@@ -99,7 +99,7 @@ dialog {
                 border-radius: 50%;
                 font-size: 2rem;
                 font-weight: 700;
-                color: light-dark($lightest, $darkest);
+                color: light-dark($clr-lightest, $clr-darkest);
             }
         }
         p {
@@ -108,21 +108,21 @@ dialog {
     }
     &.success {
         .icon {
-            background-color: $success;
+            background-color: $clr-success;
         }
     }
     &.error {
         .icon {
-            background-color: $error;
+            background-color: $clr-error;
         }
     }
 }
 
 
-@media(max-width: $mobile-breakpoint) {
+@media(max-width: $dim-breakpoint) {
     fieldset {
         width: 100%;
-        border: 2px solid $purple;
+        border: 2px solid $clr-purple;
         background-size: 120px;
         transform: unset;
         margin: 0;

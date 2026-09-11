@@ -5,18 +5,18 @@ nav:not(.toc) {
     top: 20vh;
     right: 2vw;
     z-index: 100;
-    background-color: light-dark($lighter, $darker);
-    border: 1px solid light-dark($light, $dark);
+    background-color: light-dark($clr-lighter, $clr-darker);
+    border: 1px solid light-dark($clr-light, $clr-dark);
     padding: 0.5rem;
     border-radius: 50px;
     margin-top: -50px;
     box-shadow:
-        0 0 10px light-dark(hsl(from #{$light} h s l / 50%), hsl(from #{$black} h s l / 50%)),
-        -2px -2px 10px light-dark(hsl(from #{$light} h s l / 10%), hsl(from #{$black} h s l / 10%)),
-        2px 2px 10px light-dark(hsl(from #{$light} h s l / 20%), hsl(from #{$black} h s l / 10%)),
-        inset 0 0 10px light-dark(hsl(from #{$light} h s l / 90%), hsl(from #{$black} h s l / 90%)),
-        -2px -2px 10px light-dark(hsl(from #{$light} h s l / 10%), hsl(from #{$black} h s l / 10%)),
-        2px 2px 10px light-dark(hsl(from #{$light} h s l / 10%), hsl(from #{$black} h s l / 10%)
+        0 0 10px light-dark(hsl(from #{$clr-light} h s l / 50%), hsl(from #{$clr-black} h s l / 50%)),
+        -2px -2px 10px light-dark(hsl(from #{$clr-light} h s l / 10%), hsl(from #{$clr-black} h s l / 10%)),
+        2px 2px 10px light-dark(hsl(from #{$clr-light} h s l / 20%), hsl(from #{$clr-black} h s l / 10%)),
+        inset 0 0 10px light-dark(hsl(from #{$clr-light} h s l / 90%), hsl(from #{$clr-black} h s l / 90%)),
+        -2px -2px 10px light-dark(hsl(from #{$clr-light} h s l / 10%), hsl(from #{$clr-black} h s l / 10%)),
+        2px 2px 10px light-dark(hsl(from #{$clr-light} h s l / 10%), hsl(from #{$clr-black} h s l / 10%)
     );
 
     * {
@@ -55,7 +55,7 @@ nav:not(.toc) {
                 z-index: 1;
 
                 path {
-                    fill: $purple;
+                    fill: $clr-purple;
                 }
             }
             &#travels-item-mobile {
@@ -66,7 +66,7 @@ nav:not(.toc) {
                     content: '';
                     position: absolute;
                     inset: 0;
-                    background: $yellow;
+                    background: $clr-yellow;
                     clip-path: polygon(0 50%,50% -50%,100% 50%,50% 150%,0 50%,
                         $border 50%,
                         calc(25% + $border*cos(60deg)) calc(100% - $border*sin(60deg)),
@@ -89,7 +89,7 @@ nav:not(.toc) {
 }
 
 
-@media(max-width: $mobile-breakpoint) {
+@media(max-width: $dim-breakpoint) {
     nav:not(.toc) {
         display: none;
     }

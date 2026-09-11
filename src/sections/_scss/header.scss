@@ -9,7 +9,7 @@ header {
         content: "";
         position: absolute;
         inset: 0;
-        background: linear-gradient(to right, transparent 0%, light-dark($lightest, $darkest) 100%);
+        background: linear-gradient(to right, transparent 0%, light-dark($clr-lightest, $clr-darkest) 100%);
         pointer-events: none;
     }
     .logo {
@@ -38,7 +38,7 @@ header {
 }
 
 
-@media(max-width: $mobile-breakpoint) {
+@media(max-width: $dim-breakpoint) {
     @import '../../app/_scss/mobile';
 
     header {
@@ -63,7 +63,7 @@ header {
             text-align: left;
             font-size: 1.2rem;
             padding-bottom: 2rem;
-            border-bottom: 1px solid light-dark($darker, $lighter);
+            border-bottom: 1px solid light-dark($clr-darker, $clr-lighter);
 
             a {
                 font-size: 1.2rem;
