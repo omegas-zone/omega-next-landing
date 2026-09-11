@@ -21,7 +21,8 @@ fieldset {
         transition: all 0.5s ease-in-out;
     }
     input,
-    textarea {
+    textarea,
+    select {
         background-color: light-dark($clr-lighter, $clr-darker);
         border: 1px solid light-dark($clr-lightest, $clr-darkest);
         color: light-dark($clr-darkest, $clr-lightest);

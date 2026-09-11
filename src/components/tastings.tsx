@@ -10,7 +10,7 @@ import type { Tasting } from '@/types/all';
 import './_scss/tastings.scss';
 
 type FilterKey = 'brand' | 'country' | 'type' | 'cask_type';
-type SortKey = 'name' | 'rating' | 'region' | 'strength';
+type SortKey = 'brand' | 'rating' | 'region' | 'strength';
 type SortDirection = 'asc' | 'desc';
 
 type SortOption = {
@@ -21,8 +21,8 @@ type SortOption = {
 
 const sortOptions: SortOption[] = [
     {
-        key: 'name',
-        label: 'Name',
+        key: 'brand',
+        label: 'Brand',
         defaultDirection: 'asc',
     },
     {
@@ -75,7 +75,7 @@ export default function Tastings({ tastings }: { tastings: Tasting[] }) {
         cask_type: '',
     });
 
-    const [sortKey, setSortKey] = useState<SortKey>('name');
+    const [sortKey, setSortKey] = useState<SortKey>('brand');
     const [sortDirection, setSortDirection] = useState<SortDirection>('asc');
 
     const filterOptions = useMemo(() => ({
@@ -100,8 +100,8 @@ export default function Tastings({ tastings }: { tastings: Tasting[] }) {
             let result = 0;
 
             switch (sortKey) {
-                case 'name':
-                    result = compareStrings(a.name, b.name);
+                case 'brand':
+                    result = compareStrings(a.brand, b.brand);
                     break;
 
                 case 'rating':
@@ -154,7 +154,7 @@ export default function Tastings({ tastings }: { tastings: Tasting[] }) {
     const hasFilters = Object.values(filters).some(Boolean);
 
     return (<>
-        <div className="whisky-controls">
+        <fieldset>
             <div className="whisky-filters">
                 <span>Filter:</span>
                 {(Object.keys(filterLabels) as FilterKey[]).map(key => (
@@ -171,7 +171,7 @@ export default function Tastings({ tastings }: { tastings: Tasting[] }) {
                     </label>
                 ))}
 
-                {hasFilters && (<button type="button" className="reset-filters" onClick={resetFilters}>Reset</button>)}
+                {hasFilters && (<button type="button" className="reset-filters" onClick={resetFilters}>Showing {filteredTastings.length} {filteredTastings.length === 1 ? 'tasting' : 'tastings'} - Reset</button>)}
             </div>
 
             <div className="whisky-sorting">
@@ -193,10 +193,7 @@ export default function Tastings({ tastings }: { tastings: Tasting[] }) {
                     );
                 })}
             </div>
-            <div className="whisky-result-count">
-                {filteredTastings.length} {filteredTastings.length === 1 ? 'tasting' : 'tastings'}
-            </div>
-        </div>
+        </fieldset>
 
 
         {filteredTastings.map(tasting => {
