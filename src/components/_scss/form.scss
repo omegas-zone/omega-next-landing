@@ -45,8 +45,17 @@ fieldset {
         height: 1px;
         opacity: 0;
     }
+    .error {
+        margin: 0.4rem 0 0;
+        color: $clr-error;
+        font-size: 1rem;
+    }
+    input[aria-invalid='true'],
+    textarea[aria-invalid='true'] {
+        border: 2px solid $clr-error;
+    }
 }
-:is(fieldset, dialog) button{
+:is(fieldset, dialog) button {
     background-color: $clr-yellow;
     border: 1px solid light-dark($clr-lighter, $clr-darker);
     font-weight: bold;
