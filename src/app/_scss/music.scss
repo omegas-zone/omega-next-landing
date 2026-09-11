@@ -16,3 +16,6 @@
     background-size: cover;
     width: 100vw;
 }
+:is(h1, h2, h3) {
+    font-family: $ff-header-music;
+}

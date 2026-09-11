@@ -13,6 +13,9 @@ section#whisky {
     display: block;
     height: 100vh;
 
+    h2 {
+        font-family: $ff-header-whisky;
+    }
     article {
         display: block;
         align-items: center;

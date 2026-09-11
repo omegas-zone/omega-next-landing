@@ -10,6 +10,7 @@ import Toggle from "@/components/toggle";
 import type { Blog, Gallery } from '@/types/all';
 
 import '../../_scss/_page.scss';
+import '../../_scss/diy.scss';
 
 type Props = {
     params: Promise<{ id: string }>;

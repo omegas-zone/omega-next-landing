@@ -10,6 +10,7 @@ import { API_URL } from '@/lib/api';
 import type { Tasting } from '@/types/all';
 
 import '../_scss/_page.scss';
+import '../_scss/whisky.scss';
 
 export const metadata: Metadata = {
     title: 'Ωmega - Whisky',

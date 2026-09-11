@@ -7,6 +7,9 @@ section#music {
     justify-content: flex-start;
     position: relative;
 
+    h2 {
+        font-family: $ff-header-music;
+    }
     article {
         margin-bottom: 1rem;
     }

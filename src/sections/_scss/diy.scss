@@ -16,6 +16,10 @@ section#diy {
     gap: 2rem;
     overflow: hidden;
 
+    h2 {
+        font-family: $ff-header-diy;
+        font-weight: normal;
+    }
     .diy-images {
         pointer-events: none;
         position: absolute;

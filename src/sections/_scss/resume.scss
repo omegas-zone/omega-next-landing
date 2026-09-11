@@ -17,6 +17,9 @@ section#resume {
     height: 350vh;
     scroll-snap-align: none;
 
+    :is(h2, h3) {
+        font-family: $ff-header-resume;
+    }
     article {
         display: flex;
         align-items: center;
