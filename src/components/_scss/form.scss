@@ -1,19 +1,11 @@
 @use '../../app/_scss/variables' as *;
+@use '../../app/_scss/form' as *;
 
 fieldset {
-    display: flex;
     flex-direction: column;
-    gap: 2rem;
     width: 50vw;
-    border: none;
-    background-color: light-dark($clr-lightest, $clr-darkest);
-    padding: 4rem 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 0 10px light-dark(hsl(from #{$clr-light} h s l / 50%), hsl(from #{$clr-black} h s l / 50%));
-    background-image: url('/images/me.png');
-    background-repeat: no-repeat;
-    background-position: right bottom;
-    background-size: 360px;
+    padding-block: 4rem;
+    background: url('/images/me.png') no-repeat right bottom / 360px light-dark($clr-lightest, $clr-darkest);
     transform: perspective(1000px) rotateY(8deg) rotateX(4deg);
 
     &:has(*:focus) {
@@ -25,129 +17,19 @@ fieldset {
     select {
         background-color: light-dark($clr-lighter, $clr-darker);
         border: 1px solid light-dark($clr-lightest, $clr-darkest);
-        color: light-dark($clr-darkest, $clr-lightest);
-        padding: 0.5rem 1rem;
-        border-radius: 0.5rem;
-        font-size: 1.2rem;
-        box-shadow: inset 0 0 10px light-dark(hsl(from #{$clr-light} h s l / 50%), hsl(from #{$clr-black} h s l / 50%));
         width: calc(100% - 400px);
-
-        &:focus {
-            outline: 2px solid light-dark($clr-lighter, $clr-darker);
-        }
     }
-    textarea {
-        height: 6rem;
-    }
-    .honeypot {
-        position: absolute;
-        left: -9999px;
-        width: 1px;
-        height: 1px;
-        opacity: 0;
-    }
-    .error {
-        margin: 0.4rem 0 0;
-        color: $clr-error;
-        font-size: 1rem;
-    }
-    input[aria-invalid='true'],
-    textarea[aria-invalid='true'] {
-        border: 2px solid $clr-error;
-    }
-}
-:is(fieldset, dialog) button {
-    background-color: $clr-yellow;
-    border: 1px solid light-dark($clr-lighter, $clr-darker);
-    font-weight: bold;
-    color: $clr-darker;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-    width: 320px;
-    box-shadow: 0 0 20px hsl(from #{$clr-yellow} h s l / 25%);
-    outline: none;
-
-    &:hover {
-        box-shadow: 0 0 30px hsl(from #{$clr-yellow} h s l / 50%);
-    }
-}
-dialog {
-    border: 1px solid $clr-purple;
-    border-radius: 1rem;
-    padding: 0;
-    max-width: 40vw;
-    width: calc(100% - 2rem);
-    background-color: light-dark($clr-lighter, $clr-darker);
-    color: light-dark($clr-dark, $clr-light);
-    box-shadow: 0 1rem 3rem hsl(from #{black} h s l / 35%);
-    outline: none;
-
-    &::backdrop {
-        background-color: hsl(from #{black} h s l / 60%);
-        backdrop-filter: blur(4px);
-    }
-    & > div {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 2.5rem 2rem;
-        text-align: center;
-
-        h2 {
-            display: flex;
-            gap: 2rem;
-            margin: 0 0 1rem;
-            align-items: center;
-
-            .icon {
-                width: 3rem;
-                height: 3rem;
-                line-height: 3rem;
-                border-radius: 50%;
-                font-size: 2rem;
-                font-weight: 700;
-                color: light-dark($clr-lightest, $clr-darkest);
-            }
-        }
-        p {
-           margin: 0 0 3rem 0;
-        }
-    }
-    &.success {
-        .icon {
-            background-color: $clr-success;
-        }
-    }
-    &.error {
-        .icon {
-            background-color: $clr-error;
-        }
+    button.primary {
+        width: 320px;
     }
 }
 
 
 @media(max-width: $dim-breakpoint) {
     fieldset {
-        width: 100%;
-        border: 2px solid $clr-purple;
         background-size: 120px;
         transform: unset;
         margin: 0;
         box-sizing: border-box;
-
-        input,
-        textarea,
-        button {
-            width: 100%;
-            margin-inline: 0;
-            box-sizing: border-box;
-            margin-top: 0;
-        }
-        button {
-            width: 60%;
-        }
     }
 }
