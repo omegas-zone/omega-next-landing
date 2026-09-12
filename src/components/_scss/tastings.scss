@@ -1,4 +1,5 @@
 @use '../../app/_scss/variables' as *;
+@use '../../app/_scss/form' as *;
 
 .whisky-wrapper {
     display: grid;
@@ -73,143 +74,29 @@
         background-color: transparent;
     }
 }
-fieldset {
-    display: flex;
-    margin-bottom: 2rem;
-    gap: 2rem;
-    width: calc(100% - 4rem);
-    border: none;
-    background-color: light-dark($clr-lighter, $clr-darker);
-    padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 0 10px light-dark(
-        hsl(from #{$clr-light} h s l / 50%),
-        hsl(from #{$clr-black} h s l / 50%)
-    );
 
-    span, select, button {
-        width: 320px;
-    }
-    .whisky-filters,
-    .whisky-sorting {
-        display: flex;
-        flex-direction: column;
-        width: 40%;
-    }
-    .reset-filters {
-        margin-block: 1rem;
-    }
-    input,
+fieldset {
+    justify-content: space-between;
+
     select,
     button {
-        background-color: light-dark($clr-light, $clr-dark);
-        border: 1px solid light-dark($clr-lighter, $clr-darker);
-        color: light-dark($clr-darkest, $clr-lightest);
-        padding: 0.5rem 1rem;
         margin: 0.5rem 1rem;
-        border-radius: 0.5rem;
-        font-size: 1.2rem;
-        box-shadow: inset 0 0 10px light-dark(
-            hsl(from #{$clr-light} h s l / 50%),
-            hsl(from #{$clr-black} h s l / 50%)
-        );
-        cursor: pointer;
+        width: 320px;
+        display: flex;
+        justify-content: space-between;
 
-        &:hover {
-            box-shadow: inset 0 0 16px light-dark(
-                hsl(from #{$clr-light} h s l / 50%),
-                hsl(from #{$clr-black} h s l / 80%)
-            );
-        }
-    }
-    select {
-        &:focus {
-            outline: none;
-        }
-        option {
-            background-color: light-dark($clr-light, $clr-dark);
-            color: light-dark($clr-darkest, $clr-lightest);
-
-            &:hover {
-                background-color: $clr-purple;
-            }
-        }
-    }
-    @supports (appearance: base-select) {
-        select,
-        ::picker(select) {
-            appearance: base-select;
-        }
-        ::picker(select) {
-            background-color: light-dark($clr-light, $clr-dark);
-            border: 1px solid light-dark($clr-lighter, $clr-darker);
-            border-radius: 0.5rem;
-            box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 25%);
-            max-height: 15rem;
-            overflow-y: auto;
-            scrollbar-width: 8px;
-            scrollbar-color: $clr-purple transparent;
-        }
-        select::picker-icon {
-            width: 1.5rem;
-            height: 1.5rem;
-            color: transparent;
-            background: url('/vector/chevron.svg') center / contain no-repeat;
-        }
-        select:open::picker-icon {
-            rotate: 180deg;
-        }
-        option {
-            background-color: light-dark($clr-light, $clr-dark);
-            color: light-dark($clr-darkest, $clr-lightest);
-            padding: 0.5rem 1rem;
-            font-size: 1.2rem;
-
-            &:focus {
-                background-color: light-dark($clr-lighter, $clr-darker);
-                outline: none;
-            }
-            &:checked {
-                font-weight: 700;
-            }
-            &::checkmark {
-                color: $clr-yellow;
-            }
-        }
-    }
-    button {
-        box-shadow: 0 0 10px light-dark(
-            hsl(from #{$clr-light} h s l / 50%),
-            hsl(from #{$clr-black} h s l / 50%)
-        );
-
-        &:hover {
-            box-shadow: 0 0 16px light-dark(
-                hsl(from #{$clr-light} h s l / 50%),
-                hsl(from #{$clr-black} h s l / 80%)
-            );
-        }
         span {
             color: $clr-yellow;
         }
+        &.primary span {
+            color: $clr-darkest;
+            font-weight: normal;
+        }
     }
-}
-button.reset-filters {
-    background-color: $clr-yellow;
-    border: 1px solid light-dark($clr-lighter, $clr-darker);
-    font-weight: bold;
-    color: $clr-darker;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-    width: 320px;
-    box-shadow: 0 0 20px hsl(from #{$clr-yellow} h s l / 25%);
-    outline: none;
-
-    &:hover {
-        box-shadow: 0 0 30px hsl(from #{$clr-yellow} h s l / 50%);
+    :is(.whisky-filters, .whisky-sorting) {
+        display: flex;
+        flex-direction: column;
+        width: 40%;
     }
 }
 
@@ -228,8 +115,7 @@ button.reset-filters {
         .specs {
             grid-template-columns: 80px 1fr;
 
-            .spec-label,
-            .spec-value {
+            :is(.spec-label, .spec-value) {
                 font-size: 1rem;
             }
         }

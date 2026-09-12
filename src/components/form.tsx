@@ -170,7 +170,7 @@ export default function Form(): JSX.Element {
                     )}
                 </label>
                 <input type="text" name="website" tabIndex={-1} autoComplete="off" className="honeypot"/>
-                <button type="submit">{status === 'sending' ? 'Sending…' : 'Send'}</button>
+                <button className="primary" type="submit">{status === 'sending' ? 'Sending…' : 'Send'}</button>
             </fieldset>
         </form>
 
@@ -180,15 +180,14 @@ export default function Form(): JSX.Element {
             onCancel={() => closeDialog(isSuccess === false)}
         >
             <div className="content">
-                <span className="icon" aria-hidden="true">
-                    {isSuccess ? '✓' : '!'}
-                </span>
                 <h2>
                     <span className="icon" aria-hidden="true">{isSuccess ? '✓' : '!'}</span>
                     {isSuccess ? 'Thanks!' : 'Something went wrong'}
                 </h2>
                 <p>{isSuccess ? 'Your message has been sent.' : 'Please try again.'}</p>
-                <button onClick={() => closeDialog(!isSuccess)}>{isSuccess ? 'Close' : 'Try again'}</button>
+                <button className="secondary" onClick={() => closeDialog(!isSuccess)}>
+                    {isSuccess ? 'Close' : 'Try again'}
+                </button>
             </div>
         </dialog>
     </>);

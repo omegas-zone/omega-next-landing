@@ -1,0 +1,229 @@
+@use '_variables' as *;
+
+fieldset {
+    display: flex;
+    margin-bottom: 2rem;
+    gap: 2rem;
+    width: calc(100% - 4rem);
+    border: none;
+    border-radius: 1rem;
+    background-color: light-dark($clr-lighter, $clr-darker);
+    padding: 2rem;
+    box-shadow: 0 0 10px light-dark(
+        hsl(from #{$clr-light} h s l / 50%),
+        hsl(from #{$clr-black} h s l / 50%)
+    );
+
+    .error {
+        margin: 0.4rem 0 0;
+        color: $clr-error;
+        font-size: 1rem;
+    }
+}
+
+input,
+textarea,
+select,
+button {
+    background-color: light-dark($clr-light, $clr-dark);
+    border: 1px solid light-dark($clr-lighter, $clr-darker);
+    color: light-dark($clr-darkest, $clr-lightest);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    box-shadow: inset 0 0 10px light-dark(
+        hsl(from #{$clr-light} h s l / 50%),
+        hsl(from #{$clr-black} h s l / 50%)
+    );
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        box-shadow: inset 0 0 16px light-dark(
+            hsl(from #{$clr-light} h s l / 50%),
+            hsl(from #{$clr-black} h s l / 80%)
+        );
+    }
+    &:focus {
+        outline: none;
+    }
+}
+textarea {
+    height: 6rem;
+}
+select {
+    option {
+        background-color: light-dark($clr-light, $clr-dark);
+        color: light-dark($clr-darkest, $clr-lightest);
+
+        &:hover {
+            background-color: $clr-purple;
+        }
+    }
+}
+@supports (appearance: base-select) {
+    select,
+    ::picker(select) {
+        appearance: base-select;
+    }
+    ::picker(select) {
+        background-color: light-dark($clr-light, $clr-dark);
+        border: 1px solid light-dark($clr-lighter, $clr-darker);
+        border-radius: 0.5rem;
+        box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 25%);
+        max-height: 15rem;
+        overflow-y: auto;
+        scrollbar-width: 8px;
+        scrollbar-color: $clr-purple transparent;
+    }
+    select::picker-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+        color: transparent;
+        background: url('/vector/chevron.svg') center / contain no-repeat;
+    }
+    select:open::picker-icon {
+        rotate: 180deg;
+    }
+    option {
+        background-color: light-dark($clr-light, $clr-dark);
+        color: light-dark($clr-darkest, $clr-lightest);
+        padding: 0.5rem 1rem;
+        font-size: 1.2rem;
+
+        &:focus {
+            background-color: light-dark($clr-lighter, $clr-darker);
+            outline: none;
+        }
+        &:checked {
+            font-weight: 700;
+        }
+        &::checkmark {
+            color: $clr-yellow;
+        }
+    }
+}
+button {
+    box-shadow: 0 0 10px light-dark(
+        hsl(from #{$clr-light} h s l / 50%),
+        hsl(from #{$clr-black} h s l / 50%)
+    );
+
+    &:hover {
+        box-shadow: 0 0 16px light-dark(
+            hsl(from #{$clr-light} h s l / 50%),
+            hsl(from #{$clr-black} h s l / 80%)
+        );
+    }
+    &.primary {
+        background-color: $clr-yellow;
+        border: 1px solid light-dark($clr-lighter, $clr-darker);
+        font-weight: bold;
+        color: $clr-darker;
+        width: 320px;
+        box-shadow: 0 0 20px hsl(from #{$clr-yellow} h s l / 25%);
+
+        &:hover {
+            box-shadow: 0 0 30px hsl(from #{$clr-yellow} h s l / 50%);
+        }
+    }
+    &.secondary {
+        background-color: transparent;
+        border: 1px solid $clr-yellow;
+        font-weight: bold;
+        color: $clr-yellow;
+        width: 320px;
+        box-shadow: 0 0 20px hsl(from #{$clr-yellow} h s l / 25%);
+
+        &:hover {
+            box-shadow: 0 0 30px hsl(from #{$clr-yellow} h s l / 50%);
+        }
+    }
+}
+.honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+input[aria-invalid='true'],
+textarea[aria-invalid='true'] {
+    border: 2px solid $clr-error;
+}
+dialog {
+    border: 1px solid $clr-purple;
+    border-radius: 1rem;
+    padding: 0;
+    max-width: 40vw;
+    width: calc(100% - 2rem);
+    background-color: light-dark($clr-lighter, $clr-darker);
+    color: light-dark($clr-dark, $clr-light);
+    box-shadow: 0 1rem 3rem hsl(from #{black} h s l / 35%);
+    outline: none;
+
+    &::backdrop {
+        background-color: hsl(from #{black} h s l / 60%);
+        backdrop-filter: blur(4px);
+    }
+    & > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2.5rem 2rem;
+        text-align: center;
+
+        h2 {
+            display: flex;
+            gap: 2rem;
+            margin: 0 0 1rem;
+            align-items: center;
+
+            .icon {
+                width: 3rem;
+                height: 3rem;
+                line-height: 3rem;
+                border-radius: 50%;
+                font-size: 2rem;
+                font-weight: 700;
+                color: light-dark($clr-lightest, $clr-darkest);
+            }
+        }
+        p {
+            margin: 0 0 3rem 0;
+        }
+    }
+    &.success {
+        .icon {
+            background-color: $clr-success;
+        }
+    }
+    &.error {
+        .icon {
+            background-color: $clr-error;
+        }
+    }
+}
+
+
+@media(max-width: $dim-breakpoint) {
+    fieldset {
+        width: 100%;
+        border: 2px solid $clr-purple;
+        margin: 0;
+        box-sizing: border-box;
+
+        input,
+        textarea,
+        select,
+        button {
+            width: 100%;
+            margin-inline: 0;
+            box-sizing: border-box;
+            margin-top: 0;
+        }
+        button {
+            width: 60%;
+        }
+    }
+}

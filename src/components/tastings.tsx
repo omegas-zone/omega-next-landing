@@ -171,7 +171,10 @@ export default function Tastings({ tastings }: { tastings: Tasting[] }) {
                     </label>
                 ))}
 
-                {hasFilters && (<button type="button" className="reset-filters" onClick={resetFilters}>Showing {filteredTastings.length} {filteredTastings.length === 1 ? 'tasting' : 'tastings'} - Reset</button>)}
+                {hasFilters && (<button type="button" className="primary" onClick={resetFilters}>
+                    <span>Showing {filteredTastings.length} {filteredTastings.length === 1 ? 'tasting' : 'tastings'}</span>
+                    Reset
+                </button>)}
             </div>
 
             <div className="whisky-sorting">
