@@ -6,71 +6,71 @@ footer.component {
     left: 0;
     width: 100vw;
     height: 60vh;
-	z-index: 999;
+    z-index: 999;
     background: linear-gradient(
-		to bottom,
-		light-dark(hsl(from #{$clr-lightest} h s l / 0%), hsl(from #{$clr-darkest} h s l / 0%)),
-		light-dark(hsl(from #{$clr-lightest} h s l / 12.5%), hsl(from #{$clr-darkest} h s l / 12.5%)),
-		light-dark(hsl(from #{$clr-lightest} h s l / 50%), hsl(from #{$clr-darkest} h s l / 50%)),
-		light-dark($clr-lightest, $clr-darkest)
-	);
-	pointer-events: none;
+        to bottom,
+        light-dark(hsl(from #{$clr-lightest} h s l / 0%), hsl(from #{$clr-darkest} h s l / 0%)),
+        light-dark(hsl(from #{$clr-lightest} h s l / 12.5%), hsl(from #{$clr-darkest} h s l / 12.5%)),
+        light-dark(hsl(from #{$clr-lightest} h s l / 50%), hsl(from #{$clr-darkest} h s l / 50%)),
+        light-dark($clr-lightest, $clr-darkest)
+    );
+    pointer-events: none;
 
-	& > a {
-		position: fixed;
-		left: 2vw;
-		bottom: 20vh;
-		pointer-events: all;
-	}
-	.logo {
-		width: 400px;
-		z-index: 999;
-		position: fixed;
-		left: 2vw;
-		bottom: 2vh;
-	}
-	.social {
-		position: fixed;
-		bottom: 1vh;
-		left: calc(1vw + 120px);
-		display: flex;
-		justify-content: flex-end;
-		flex-wrap: wrap;
-		z-index: 99999;
-		width: 320px;
+    & > a {
+        position: fixed;
+        left: 2vw;
+        bottom: 20vh;
+        pointer-events: all;
+    }
+    .logo {
+        width: 400px;
+        z-index: 999;
+        position: fixed;
+        left: 2vw;
+        bottom: 2vh;
+    }
+    .social {
+        position: fixed;
+        bottom: 1vh;
+        left: calc(1vw + 120px);
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        z-index: 99999;
+        width: 320px;
 
-		a {
-			position: relative;
-			width: 48px;
-			height: 48px;
-			border-bottom: 0;
-			background: none;
-			pointer-events: all;
+        a {
+            position: relative;
+            width: 48px;
+            height: 48px;
+            border-bottom: 0;
+            background: none;
+            pointer-events: all;
 
-			.svg {
-				width: 16px;
-				height: auto;
-				padding: 4px 4px 0 0;
-				margin: 12px 4px;
-				fill: $clr-purple;
-			}
-		}
-	}
-	.copy {
-		position: fixed;
-		right: 1vw;
-		bottom: 10px;
-		font-size: .6rem;
-		z-index: 9999;
-		width: 60px;
-		text-align: left;
-		margin-bottom: 0;
-	}
+            .svg {
+                width: 16px;
+                height: auto;
+                padding: 4px 4px 0 0;
+                margin: 12px 4px;
+                fill: $clr-purple;
+            }
+        }
+    }
+    .copy {
+        position: fixed;
+        right: 1vw;
+        bottom: 10px;
+        font-size: .6rem;
+        z-index: 9999;
+        width: 60px;
+        text-align: left;
+        margin-bottom: 0;
+    }
 }
 
 
 @media(max-width: $dim-breakpoint) {
-	footer.component {
-		display: none;
-	}
+    footer.component {
+        display: none;
+    }
 }
