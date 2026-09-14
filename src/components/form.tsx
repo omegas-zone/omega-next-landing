@@ -185,7 +185,7 @@ export default function Form(): JSX.Element {
                     {isSuccess ? 'Thanks!' : 'Something went wrong'}
                 </h2>
                 <p>{isSuccess ? 'Your message has been sent.' : 'Please try again.'}</p>
-                <button className="secondary" onClick={() => closeDialog(!isSuccess)}>
+                <button className="primary" onClick={() => closeDialog(!isSuccess)}>
                     {isSuccess ? 'Close' : 'Try again'}
                 </button>
             </div>
