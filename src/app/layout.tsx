@@ -4,9 +4,9 @@ import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata: Metadata = {
-    title: 'Ω',
+    title: 'Ωmega',
     description: 'Ω - My music',
-    keywords: 'omega,water,phlegmatic,music,techno,ambient,minimal,lounge,blog,weblog,template,html,css,menu,responsive,travel,travels,travelblog,tutorials,diy,yupsie',
+    keywords: 'omega,water,phlegmatic,music,techno,ambient,minimal,lounge,blog,weblog,template,cv.html,css,menu,responsive,travel,travels,travelblog,tutorials,diy,yupsie',
     authors: [{ name: 'Omega' }],
 };
 export const viewport: Viewport = {
