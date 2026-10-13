@@ -109,6 +109,11 @@ a {
         color: $clr-purple;
         font-size: 1.7rem;
     }
+    section,
+    header,
+    footer {
+        width: unset;
+    }
     .content-column {
         width: 90%;
         margin-inline: auto;
